@@ -1,0 +1,91 @@
+<div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb -4">
+    <div class="col-12 col-lg-6">
+        <img src="/imagens/doisbestao.jpg"  widht="607" height="600" class="d-block mx-lg-auto img-fluid" loading="lazy">
+    </div>
+    <div class="col-12 col-lg-6">
+        <h4 class="display-9 fw-bold  mb-3">Venha conhecer a aventuras culinárias onde usaremos ingredientes simples e
+            frescos e os transformaremos em refeições sofisticadas e elegantes para o cozinheiro doméstico diário.</h4>
+        <p class="lead">
+           Explore nossa grande listas de receitas deliciosas, incluido receitas de diversas das regioes do Brasil,sobremesas fáceis , comidas veganas e vegetarianas  e receitas sem glúten.
+
+        </p>
+        <div class="d-grip gap-2 d-md-flex justify-content-md-start">
+            <a href="/explorar-ultimo" class="btn btn-primary btn-dark btn-lgpx-4 me-2">Mostrar últimas receitas</a>
+            <a href="/receita-aleatoria" class="btn btn-outline-secondary btn-lgpx-4 me-2">Receitas aleatorias</a>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- Cetegorias de comidas-->
+<div class="row row-cols-2 row-cols-lg-6 g-2 g-lg-3 py-4">
+  
+    <!--  PUXANDO DADOS VIA EJS-->
+  
+    <% if(categories != '') { %>
+        <% categories.forEach(function(categoria,index){%>  
+    <a href="/categories/<%- categoria.nome %> " class="col text-center categorias_link">
+        <div class="categorias_img shadow">
+            <img src="imagens/<%-categoria.imagem %> " alt="<% categoria.nome %> " loading="lazy">
+        </div>
+        <div class="pt-1"><%- categoria.nome %> </div>
+
+    </a>
+    <% }) %> 
+    <% } %> 
+
+    
+
+    <a href="/categories" class="col text-center categorias_link">
+        <div class="categorias_img shadow">
+            <img src="/imagens/todos.jpg" alt="" loading="lazy">
+        </div>
+        <div class="pt-1">Mostrar Todas</div>
+    </a>
+</div>
+<!-- Cetegogias de comidas final-->
+
+<!-- Começo final-->
+<section class="pb-4 pt-4">
+    <div class="d-flex mb-2 align- items-center">
+        <h2>Últimas Receitas</h2>
+        <a href="/explorar-ultimo" class="ms-auto" >Ver  mais</a>
+    </div>
+
+    <div class="row row-cols-2  row-cols-lg-5 g-2 g-lg-3">
+
+
+        <% if (comida != '') { %> 
+            <% comida.ultimasReceita.forEach(function(receita,index) { %> 
+            <a href="/receita/<%= receita._id %> " class="col text-center categorias_link">
+                <div class="categorias_img  categorias_img-maior shadow">
+                    <img class="personalizado" src="/imagens/<%=receita.image %> " alt="<%= receita.nome %> " laading="lazy">
+                </div>
+                <div class="pt-1"><%= receita.nome%></div>
+            </a>
+            <% }) %>
+            <% } %>
+    </div>
+
+</section>
+
+<!-- final final-->
+
+
+
+<!-- Enviar start-->
+<section class="px-4 py-5  my-5 text-center">
+    <img src="/imagens/footer.jpg" class="d-block mx-auto mb-4 img-fluid" alt="Publique sua receita de graça todo dia" width="566" height="208" loading="lazy">
+    <h1 class="display-5  fw-bold">Publique sua receita de graça todo dia</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Publique sua receita para milhares de pessoas de graça.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="/enviar-receita" class="btn btn-primary btn-dark btn-lg">Enviar Receita</a>
+        </div>
+    </div>
+</section>
+
+
+<!-- Enviar final-->
