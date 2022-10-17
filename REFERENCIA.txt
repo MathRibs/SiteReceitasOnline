@@ -1,0 +1,49 @@
+https://www.youtube.com/watch?v=G0RIx2SCzAg&ab_channel=LeWagon
+
+
+https://www.youtube.com/watch?v=6wd7PK3G7Zo&ab_channel=MatheusBattisti-HoradeCodar
+
+
+https://www.youtube.com/watch?v=VCVxtpjgO5Q&ab_channel=Keepcoding
+
+
+https://getbootstrap.com/docs/4.0/utilities/text/
+
+https://www.w3schools.com/bootstrap4/bootstrap_images.asp
+
+https://getbootstrap.com/docs/4.0/components/list-group/
+
+https://getbootstrap.com.br/docs/4.1/layout/grid/
+
+https://getbootstrap.com/docs/5.0/forms/form-control/
+
+
+https://www.youtube.com/watch?v=kL6FttXvdAU
+
+
+https://www.jamesqquick.com/blog/node-and-express-for-beginners/
+
+
+https://www.youtube.com/watch?v=GrpuvsFDrdU&ab_channel=OnlineTutorials
+
+https://edrodrigues.com.br/blog/20-incriveis-botoes-animados-de-css-puro/
+
+
+
+UPDATE:
+
+https://www.youtube.com/watch?v=866MnmAvaKs&ab_channel=ProgrammingExperience
+
+
+DELETE:
+https://www.youtube.com/watch?v=WFIuVGdmbPo&ab_channel=Technotip
+
+
+FILEUPLOAD EXPRESS
+https://www.youtube.com/watch?v=4pmkQjsKJ-U&ab_channel=DaveGray
+
+MIDDLEWARES
+Módulo Connect-flash para Node. js permite que os desenvolvedores enviem uma mensagem
+sempre que um usuário estiver redirecionando para uma página da Web especificada. 
+Por exemplo, sempre que um usuário logado com sucesso em sua conta, uma mensagem é exibida
+ (exibida) indicando seu sucesso na autenticação

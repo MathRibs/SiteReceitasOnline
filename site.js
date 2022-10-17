@@ -2,6 +2,11 @@ const express = require("express");
 
 //Ajuda com o layout 
 const expressLayouts = require("express-ejs-layouts");
+const fileUpload = require("express-fileupload");
+const session = require("express-session");
+const cookieParser = require('cookie-parser');
+const flash = require ('connect-flash');
+
 
 const porta = process.env.PORT|| 8081;
 var path = require('path');
@@ -25,6 +30,19 @@ site.use(express.static(path.join(__dirname, "/project")));//Colocar o css
 
 
 site.use(expressLayouts);
+
+site.use(cookieParser('segurancaDoSitezin'));
+
+site.use(session({
+    secret:'SecretSession',
+    saveUninitialized: true,
+    resave:true
+}));
+site.use(flash());
+
+site.use(fileUpload());
+
+
 
 site.set('layout', "./layouts/principal.ejs");
 

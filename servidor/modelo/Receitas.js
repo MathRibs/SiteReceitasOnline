@@ -3,29 +3,34 @@ const mongoose = require('mongoose');
 const esquemaReceita = new mongoose.Schema({
 nome: {
     type: String,
-    required: " Este campo e obrigatorio! "
+    required: " Campo Nome e obrigatorio! "
 },
 descricao: {
     type: String,
-    required: " Este campo e obrigatorio! "
+    required: " Campo Descrição e obrigatorio! "
 },
 email: {
     type: String,
-    required: " Este campo e obrigatorio! "
+    required: " Campo Email e obrigatorio! "
 },
 ingredientes: {
     type: Array,
-    required: " Este campo e obrigatorio! "
+    required: "Campo Ingredientes e obrigatorio! "
 },
 categoria: {
     type: String,
     enum: ['Nordeste','Sul','Sudeste','Norte','Centro-Oeste'],
-    required: " Este campo e obrigatorio! "
+    required: " Campo Categoria e obrigatorio! "
 },
 image: {
     type: String,
-    required: " Este campo e obrigatorio! "
+    required: "Campo Imagem e obrigatorio! "
 }
 });
 
+esquemaReceita.index({nome: 'text', descricao: 'text'});
+
 module.exports = mongoose.model('Receitas', esquemaReceita);
+
+
+

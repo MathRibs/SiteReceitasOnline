@@ -1,0 +1,102 @@
+<div class="px-4 py-5 my-5 text-center align-items-center">
+    <h1 class="display-5 fw-bold"> Envie Sua Receita</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead"> Compartilhe suas incriveis receitas com milhares de desenvolvedores ao redor do mundo. Preencha
+            os dados para iniciar</p>
+    </div>
+
+
+
+    <div class="col-lg-2 mx-auto align-items-center">
+        <img src="/imagens/chef.png" class="gordin" loading="lazy">
+    </div>
+
+
+</div>
+
+
+<div class="row justify-content-center">
+    <div class="col-8">
+
+        <% if(infoSubmitObj !='' ) { %>
+            <div class="alert alert-success" role="alert">
+                <%= infoSubmitObj %>
+            </div>
+            <% } %>
+
+                <% if(infoErrorsObj !='' ) { %>
+                    <div class="alert alert-danger" role="alert">
+                        <%= infoErrorsObj %>
+                    </div>
+                    <% } %>
+
+
+                        <form action="/enviar-receita" enctype="multipart/form-data" method="POST">
+                            <div class="row g-3">
+                                <div class="col-12">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="inputreceitas form-control" name="email" id="email">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="nome" class="form-label">Nome</label>
+                                    <input type="nome" class="inputreceitas form-control" name="nome" id="nome">
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="descricao" class="form-label">Descrição</label>
+                                    <textarea name="descricao" id="descricao" class="form-control" cols="30"
+                                        rows="4"></textarea>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="ingredientes" class="form-label">Ingredientes</label>
+                                    <small>Exemplo: Cebola, Alho, Sal, Óleo...</small>
+                                    <div class="listaIngredientes">
+                                        <div class="divIngredientes mb-1">
+                                            <input type="text" class="inputreceitas form-control" name="ingredientes">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="button" class="btn btn-outline-primary"
+                                        id="addIngredientesbtn">Adicionar +</button>
+
+                                </div>
+
+
+                                <div class="col-12">
+                                    <label for="categoria">Selecione uma Região</label>
+                                    <select class="form-select form-control" name="categoria" id="Categoria">
+                                        <option selected> Selecione uma Região</option>
+                                        <option value="Nordeste">Nordestina</option>
+                                        <option value="Sul">Sulista</option>
+                                        <option value="Norte">Nortista</option>
+                                        <option value="Sudeste">Sudeste</option>
+                                        <option value="Centro-Oeste">Centro-Oeste</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-12">
+                                    <label for="image">Postar Uma Imagem</label>
+                                    <input type="file" class="form-control " name="image" accept="image/*">
+                                </div>
+
+
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary">Enviar Receita</button>
+
+                                </div>
+
+
+                            </div>
+
+
+
+
+
+                        </form>
+
+    </div>
+
+</div>

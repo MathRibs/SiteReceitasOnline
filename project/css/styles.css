@@ -1,86 +1,350 @@
-
-*{font-family: 'Raleway', sans-serif;
-
+* {
+  font-family: "Raleway", sans-serif;
+  margin: 0;
 }
 
-  body{
-
-    padding: 90px;
-    background-image: url("/imagens/back2.jpg");
-    
-  }
-.container-xxl{
+body {
+  padding: 90px;
+  background-image: url("/imagens/back2.jpg");
+}
+.container-xxl {
   max-width: 1530px;
-   background:#F7F7F7;
-  
-
+  background: #f7f7f7;
 }
-  .positioned{
-   background:lightsalmon;
+.positioned {
+  background: lightsalmon;
+}
 
-  }
+li:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
 
-  li:before {
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 3px;
-    bottom: 0;
-    left: 0;
-    background-color: #000;
-    visibility: hidden;
-    -webkit-transform: scaleX(0);
-    transform: scaleX(0);
-    -webkit-transition: all 0.3s ease-in-out 0s;
-    transition: all 0.3s ease-in-out 0s;
-  }
-  li:hover:before {
-    visibility: visible;
-    -webkit-transform: scaleX(1);
-    transform: scaleX(1);
-  }
-  
-  .categorias_img{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    margin-bottom: 10px;
-    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
-    overflow: hidden;
-    border-radius: 8px;
-  }
+.efeitinmassaContato {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  color: rgb(235, 239, 32);
+  padding: 10px;
+}
 
-  .categorias_link{
-    text-align: center;
-    color: rgb(0, 0, 0);
-    display: block;
-    text-decoration: none;
-    text-replace: 200ms all;
+.efeitinmassaHome {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px;
+  color: rgb(60, 139, 242);
+  padding-top: 10px;
+}
 
-  }
+.efeitinmassaEnviar {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  color: rgb(242, 72, 21);
 
-  .categorias_link:hover{
-    transform: scale(1.2);
-    color: pink;
-  }
-  .categorias_img img{
-    width: 100%;
-    object-fit: cover;
-  }
- .ms-auto{
+  text-decoration: none;
+  padding: 15px;
+  padding-top: 10px;
+}
+
+.efeitinmassaSobre {
+  font-family: "Raleway", sans-serif;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 15px;
+  color: rgb(15, 205, 120);
+  padding-top: 10px;
+}
+
+.efeitinmassa:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(46, 49, 230);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.efeitinmassa1:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(60, 139, 242);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.efeitinmassa2:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(235, 239, 32);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.efeitinmassa3:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(242, 72, 21);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.efeitinmassa4:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(15, 205, 120);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.efeitinmassaContato:before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 3px;
+  bottom: 0;
+  left: 0;
+  background-color: rgb(67, 86, 206);
+  visibility: hidden;
+  -webkit-transform: scaleX(0);
+  transform: scaleX(0);
+  -webkit-transition: all 0.3s ease-in-out 0s;
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.inputizinpersonalite {
+  font-family: "Times New Roman", Times, serif;
+  color: rgb(65, 33, 33);
+  text-align: left;
+  width: 285px;
+  cursor: pointer;
+  letter-spacing: 0px;
+  text-shadow: 0 0 0px black;
+  word-spacing: 1px;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+li:hover:before {
+  visibility: visible;
+  -webkit-transform: scaleX(1);
+  transform: scaleX(1);
+}
+
+.categorias_img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 10px;
+  box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.categorias_link {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  display: block;
+  text-decoration: none;
+  text-replace: 200ms all;
+}
+
+.categorias_link:hover {
+  transform: scale(1.2);
+  color: pink;
+}
+.categorias_img img {
+  width: 100%;
+  object-fit: cover;
+}
+.ms-auto {
   color: #000;
-  font-size:larger
-
- }
- .ms-auto:hover{
-  color:blue;
-
- }
- .categorias_img-maior{
+  font-size: larger;
+}
+.ms-auto:hover {
+  color: blue;
+}
+.categorias_img-maior {
   height: 330px;
- 
- }
- .personalizado{
-  height: 329px ;
- }
+}
+.personalizado {
+  height: 329px;
+}
+.backgroundzinsuave {
+  background-color: #f5fffa;
+}
+.inputreceitas {
+  border-radius: 3.5px;
+}
+
+.presentation {
+  width: 190px;
+  border-radius: 5px;
+  background-image: linear-gradient(to right, #f00, #ff0, #0ff, #0f0, #00f);
+  background-clip: text;
+  animation: animate 20s linear infinite;
+  font-family: "Times New Roman", Times, serif;
+  font-weight: bold;
+  background-size: 1000%;
+}
+@keyframes animate {
+  0% {
+    background-position: 0% 100%;
+  }
+  50% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+.presentation1 {
+  text-decoration: none;
+  color: black;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.tagpng {
+  width: 25px;
+  height: 27px;
+}
+.gordin {
+  height: 270px;
+  width: 270px;
+}
+
+.btnzinstylelink {
+  text-decoration: none;
+  font-family: "Montserrat", sans-serif;
+  color: #fff;
+}
+
+.btnzinstyle1 {
+  background-color: lightcoral;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1;
+  margin: 20px;
+  padding: 1.2em 2.8em;
+  text-align: center;
+  font-weight: 700;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #e74c3c;
+  border-radius: 0.6em;
+  color: #e74c3c;
+  cursor: pointer;
+  border-color: #f1c40f;
+  background-image: -webkit-linear-gradient(
+    45deg,
+    #f1c40f 50%,
+    transparent 50%
+  );
+  background-image: linear-gradient(45deg, #f1c40f 50%, transparent 50%);
+  background-position: 100%;
+  background-size: 400%;
+  -webkit-transition: background 300ms ease-in-out;
+  transition: background 300ms ease-in-out;
+}
+.btnzinstyle1:hover {
+  background-position: 0;
+}
+
+.contact_info {
+  width: 100%;
+  padding-top: 70px;
+}
+.contact_info_item {
+  height: 100px;
+  border: solid 1px #e8e8e8;
+  box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+  padding-left: 32px;
+  width: 100%;
+  margin-bottom: 30px;
+  padding-right: 15px;
+}
+.contact_info_image {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+}
+.contact_info_image img {
+  max-width: 100%;
+}
+.contact_info_content {
+  padding-left: 17px;
+}
+.contact_info_title {
+  font-weight: 500;
+}
+.contact_info_text {
+  width: auto;
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.sobrebackground {
+  background-image: url("/imagens/empresa.webp");
+}
+
+.sobrebackgroundcontent {
+  background-color: snow;
+}
+
+@media only screen and (max-width: 991px) {
+  .contact_info_item {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .contact_info_item:last-child {
+    margin-bottom: 0px;
+  }
+}

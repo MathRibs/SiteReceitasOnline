@@ -1,0 +1,23 @@
+<h1 class="pb-4"> Resultado da Pesquisa</h1>
+
+
+
+
+<div class="row row-cols-2  row-cols-lg-5 g-2 g-lg-3">
+
+
+    <% if ( receita !='') { %> 
+        <% receita.forEach(function(receita,index) { %> 
+        <a href="/receita/<%= receita._id %> " class="col text-center categorias_link">
+            <div class="categorias_img  categorias_img-maior shadow">
+                <img class="personalizado" src="/imagens/<%=receita.image %> " alt="<%= receita.nome %> " laading="lazy">
+            </div>
+            <div class="pt-1"><%= receita.nome%></div>
+        </a>
+        <% }) %>
+       
+        <% } else { %>
+            <img src="/imagens/chefbarba.png" alt="">
+            <h3>Infelizmente não temos essa receita, se quiser poderá adicionar posteriormente</h3>
+            <% } %> 
+</div>

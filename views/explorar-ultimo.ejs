@@ -1,0 +1,22 @@
+<h1 class="pb-4"> Últimas Receitas Adicionadas</h1>
+
+
+
+
+<div class="row row-cols-2  row-cols-lg-5 g-2 g-lg-3">
+
+
+    <% if ( receitinha !='') { %> 
+        <% receitinha.forEach(function(receita,index) { %> 
+        <a href="/receita/<%= receita._id %> " class="col text-center categorias_link">
+            <div class="categorias_img  categorias_img-maior shadow">
+                <img class="personalizado" src="/imagens/<%=receita.image %> " alt="<%= receita.nome %> " laading="lazy">
+            </div>
+            <div class="pt-1"><%= receita.nome%></div>
+        </a>
+        <% }) %>
+       
+        <% } else { %>
+            <p>Não temos essa receita, se quiser poderá adicionar posteriormente</p>
+            <% } %> 
+</div>
