@@ -1,4 +1,9 @@
 require("../modelo/bancozinhohumild");
+
+
+
+
+
 const { userInfo } = require("os");
 const Categoria = require("../modelo/Categoria");
 const Receitas = require("../modelo/Receitas");
@@ -11,6 +16,7 @@ exports.home = async (req, res) => {
     const ultimasReceita = await Receitas.find({})
       .sort({ _id: -1 })
       .limit(numeroLimite);
+
 
     const nordestina = await Receitas.find({ categoria: "Nordeste" }).limit(
       numeroLimite
@@ -35,9 +41,18 @@ exports.home = async (req, res) => {
       nortista,
       centro,
       sudeste,
+  
     };
 
-    res.render("index", { categories, comida });
+    let response = await fetch(
+      ` https://my-recomendations-api.herokuapp.com/Recomendations`
+    );
+    data = await response.json();
+console.log(data)
+
+    res.render("index", { categories, comida,  Dados : data });
+
+   
   } catch (error) {
     res.status(500).send({ message: error.message || "Ocorreu um erro grave" });
   }
@@ -212,6 +227,71 @@ exports.redcontato = async (req, res) => {
 exports.redsobre = async (req, res) => {
   res.render("sobre");
 };
+
+
+
+
+exports.rendercalorias = async (req, res) => {
+  let data = []
+  
+  
+  
+  res.render("calories", {Data: data});
+};
+
+
+exports.postApidata  = async (req, res) =>{
+  //pesquisarTermo
+
+let data = []
+
+  try {
+    let API_ID = "a802fccc";
+    let API_KEY = "acebcca536609e977ff9920d6b667b0d";
+    let Search = req.body.pesquisarTermo;
+
+    let response = await fetch(
+      `https://api.edamam.com/api/recipes/v2?q=${Search}&app_id=a802fccc&app_key=acebcca536609e977ff9920d6b667b0d&from=0&to=2&type=public`
+    )
+      data = await response.json();
+
+
+   
+    
+      res.render("calories", { Data: data });
+
+
+  
+  } catch (error) {
+    res.render("notfound");
+  }
+
+
+};
+
+
+/* Our API ############################# */
+
+exports.showRecommendations = async (req, res) => {
+  try {
+    let id = req.params.id;
+
+    let response = await fetch(
+    `https://my-recomendations-api.herokuapp.com/Recomendations/${id}`
+    ); 
+    data = await response.json();
+    console.log(data.addresses[0].number)
+
+    res.render("recomendations", { Data: data });
+  } catch (error) {
+    res.status(500).send({ message: error.message || "Ocorreu um erro grave" });
+  }
+};
+
+
+
+
+
 
 
 //FUNCAO QUE USAMOS PARA INSERIR DADOS ESTATICAMENTE ANTES DE FAZER A ROTA

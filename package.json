@@ -23,7 +23,8 @@
     "express-session": "^1.17.3",
     "mongodb": "^4.10.0",
     "mongoose": "^6.6.1",
-    "node-fetch": "^3.2.10",
+    "node": "^19.1.0",
+    "node-fetch": "^3.3.0",
     "path": "^0.12.7"
   },
   "devDependencies": {

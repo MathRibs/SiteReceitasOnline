@@ -1,0 +1,70 @@
+<br>
+<br>
+
+
+<img src="/imagens/health.png" class="d-block mx-auto mb-4 img-fluid pt-4 rounded " width="405" height="265"
+  loading="lazy">
+
+
+<form method="POST" action="/calories" class="col-md-6 offset-md-3 pb-5"
+  style=" justify-content: center; align-items: center;">
+  <div class="col-md-6 offset-md-3">
+    <input width="100%" style="min-width: 350px; " type="search" name="pesquisarTermo" class="inputizinpersonalite"
+      class="form-control" placeholder="Pesquise uma receita..." aria-label="Procurar">
+  </div>
+
+
+</form>
+
+<div class="row row-cols-2 row-cols-lg-5 g2 g-lg-3 mb-4">
+
+  <br>
+  <br>
+  <br>
+  <% if (typeof Data.hits !=='undefined' ) { %>
+
+
+
+    <% for(var i=0; i<10; i++) {%>
+      <div class="card" style="width:16rem; background: #302e2e; justify-content: center; ">
+        <img class="card-img-top" src="<%= Data.hits[i].recipe.image %>" alt="<%= Data.hits[i].recipe.label %>">
+        <div class="card-body" style="background: #1C1C1C">
+          <h5 class="card-title" style="background: #1C1C1C">
+            <%= Data.hits[i].recipe.label %>
+          </h5>
+          <p class="card-text" style="background: #1C1C1C">
+            <%= Data.hits[i].recipe.description %>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item" style="background: #1C1C1C; display: flex;"> <b>
+              <%= (Data.hits[i].recipe.calories).toFixed(2)%>kcal em <%=Data.hits[i].recipe.yield%> porções
+            </b></li>
+          <li class="list-group-item" style="background: #1C1C1C"> <b>Tipo do prato: <%= Data.hits[i].recipe.dishType %>
+            </b> </li>
+          <li class="list-group-item" style="background: #1C1C1C"> <b>Hora do dia: <%= Data.hits[i].recipe.mealType %>
+            </b></li>
+          <li class="list-group-item" style="background: #1C1C1C"><b>Pais de origem: <%= Data.hits[i].recipe.cuisineType
+                %></b></li>
+          <li class="list-group-item" style="background: #1C1C1C"><b>Quantidade em (g) <%=
+                (Data.hits[i].recipe.totalWeight).toFixed(2) %></b></li>
+
+
+        </ul>
+
+        <div>
+          <a style="text-decoration: none;" href="<%= Data.hits[i].recipe.url %>" class="card-link pt-4"
+            target="_blank">Link da receita</a>
+        </div>
+      </div>
+
+      <% }; %>
+
+
+
+        <% } else if(Data.hits===[]) { %>
+          <img src="/imagens/chefbarba.png" alt="">
+          <h3>Infelizmente não temos essa receita, se quiser poderá adicionar posteriormente</h3>
+          <% } %>
+
+</div>

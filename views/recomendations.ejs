@@ -1,0 +1,69 @@
+<% if(Data != null) { %> 
+    <div class="backgroundzinsuave">
+
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="/">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page"><%- Data.name %></li>
+
+            </ol>
+          </nav>
+
+
+    <div class="row">
+        <div class="col-12 col-md-4">
+            <img src='<%- Data.image %> 'style="top: 100px;"  class="img-fluid sticky-top rounded"  alt="<%- Data.nome %>" loading="lazy">
+        </div>
+
+        <div class="col-12 col-md-8">
+            <div class="row">
+                <div class="col-12"><h1> <%- Data.name %></h1></div>
+                <div class="col-12 mb-4"> <img class="tagpng" src="/imagens/tag.png" alt=""><b> categoria: <%- Data.restaurant %></b></div>
+                <div class="col-12 mb-4"><b>Postado por: Site Receitas</b></div>
+
+                <div class="col-12" style="white-space: pre-line;">
+                    <h4>Descrição</h4>
+                    <%- Data.description%>
+                    </div>
+
+
+            </div>
+            <div class="row pt-4">
+                <div class="col-12">
+                    <h3>Ingredientes</h3>
+                    <ul class="list-group font-weight-bold list-group-flush">
+                        <% Data.ingredients.forEach(function(ingredients, index) { %>
+
+                            <li class="list-group-item"><%= ingredients%> </li> 
+                           <% }) %> 
+                    </ul>
+
+
+    <div>
+            <ul class="pt-4">
+                    
+                            <li><b>ENDEREÇO</b></li>
+                        <li class="list-group-item"> <%= Data.addresses[0].line1 %> </li> 
+                        <li class="list-group-item">Numero: <%= Data.addresses[0].number %> </li> 
+
+                        <li class="list-group-item"> <%= Data.addresses[0].line2 %> </li> 
+                        <li class="list-group-item"><b>CEP</b>: <%= Data.addresses[0].CEP %> </li> 
+
+
+
+                       
+                
+            </ul>
+
+<p>  <b>Site :</b>    <a target="_blank" href="<%=  Data.web %>"><%=  Data.web %></a>
+</p>
+    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <% } %>

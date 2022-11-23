@@ -19,6 +19,7 @@ rotas.get('/receita-aleatoria', receberControles.receitasAleatorias);
 rotas.get('/contato',receberControles.redcontato);
 rotas.get('/sobre', receberControles.redsobre)
 
+
 //Enviar receitas
 rotas.get('/enviar-receita', receberControles.enviarReceitas);
 rotas.post('/enviar-receita', receberControles.enviarReceitas2);
@@ -32,7 +33,15 @@ rotas.get('/receita/:id/deletar',receberControles.deletar_receitas);
 rotas.get('/update',receberControles.editreceita);
 rotas.post('/update', receberControles.updatereceita);
 
+//Our API
+rotas.get("/recomendations/:id", receberControles.showRecommendations);
 
+
+//Rotas API de receitas 
+rotas.get("/calories", receberControles.rendercalorias);
+
+
+rotas.post("/calories", receberControles.postApidata);
 
 
 
