@@ -43,7 +43,5 @@ rotas.get("/calories", receberControles.rendercalorias);
 
 rotas.post("/calories", receberControles.postApidata);
 
-
-
 module.exports = rotas ;
 //ultimasReceita

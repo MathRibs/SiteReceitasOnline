@@ -1,6 +1,7 @@
 <div class="row flex-lg-row-reverse align-items-center g-5 py-4 mb -4">
     <div class="col-12 col-lg-6">
-        <img src="/imagens/doisbestao.jpg" widht="607" height="600" class="d-block mx-lg-auto img-fluid rounded" loading="lazy">
+        <img src="/imagens/doisbestao.jpg" widht="607" height="600" class="d-block mx-lg-auto img-fluid rounded"
+            loading="lazy">
     </div>
     <div class="col-12 col-lg-6">
         <h4 class="display-9 fw-bold  mb-3">Venha conhecer a aventuras culinárias onde usaremos ingredientes simples e
@@ -227,8 +228,8 @@
 
 <!-- Enviar start-->
 <section class="px-4 py-5  my-5 text-center">
-    <img src="/imagens/footer.jpg" class="d-block mx-auto mb-4 img-fluid rounded-circle" alt="Publique sua receita de graça todo dia"
-        width="566" height="208" loading="lazy">
+    <img src="/imagens/footer.jpg" class="d-block mx-auto mb-4 img-fluid rounded-circle"
+        alt="Publique sua receita de graça todo dia" width="566" height="208" loading="lazy">
     <h1 class="display-5  fw-bold">Publique sua receita de graça todo dia</h1>
     <div class="col-lg-6 mx-auto">
         <p class="lead mb-4">Publique sua receita para milhares de pessoas de graça.</p>
@@ -243,10 +244,10 @@
 <!-- Enviar final-->
 
 <section class="px-4 py-5  my-5 text-center">
-  
+
     <h1 class="display-5  fw-bold">Verifique as calorias das receitas</h1>
-    <img src="/imagens/calories.png" class="d-block mx-auto mb-4 img-fluid pt-4 rounded-circle " 
-    width="360" height="170" loading="lazy">
+    <img src="/imagens/calories.png" class="d-block mx-auto mb-4 img-fluid pt-4 rounded-circle " width="360"
+        height="170" loading="lazy">
     <div class="col-lg-6 mx-auto">
         <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
             <a href="/calories" class="btn btn-primary btn-dark btn-lg">Pesquisar calorias</a>
@@ -266,17 +267,21 @@
     <div class="row row-cols-2  row-cols-lg-5 g-2 g-lg-3">
 
 
-            <% Dados.forEach(function(dado) { %>
-                <a href="/recomendations/<%= dado.id %> " class="col text-center categorias_link">
-                    <div class="categorias_img  categorias_img-maior shadow">
-                        <img class="personalizado" src='<%= dado.image %>' alt="receitinha "
-                            laading="lazy">
-                    </div>
-                    <div class="pt-1">
-                        <%=dado.name%>
-                    </div>
-                </a>
-                <% }) %>
+        <% Dados.forEach(function(dado) { %>
+            <a href="/recomendations/<%= dado.id %> " class="col text-center categorias_link">
+                <div class="categorias_img  categorias_img-maior shadow">
+                    <img class="personalizado" src='<%= dado.foodimg %>' alt="receitinha " laading="lazy">
+                </div>
+                <div class="pt-1">
+                    <%=dado.name%>
+                    <p>Restaurante: <%=dado.restaurant%></p>
+
+
+                     
+
+                </div>
+            </a>
+            <% }) %>
 
 
     </div>
