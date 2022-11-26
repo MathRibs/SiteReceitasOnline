@@ -40,7 +40,6 @@ rotas.get("/recomendations/:id", receberControles.showRecommendations);
 //Rotas API de receitas 
 rotas.get("/calories", receberControles.rendercalorias);
 
-
 rotas.post("/calories", receberControles.postApidata);
 
 module.exports = rotas ;

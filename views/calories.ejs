@@ -6,10 +6,10 @@
   loading="lazy">
 
 
-<form method="POST" action="/calories" class="col-md-6 offset-md-3 pb-5"
+<form method="POST" action="/calories" class="d-flex align-items-center justify-content-center col-md-6 offset-md-3 pb-5"
   style=" justify-content: center; align-items: center;">
   <div class="col-md-6 offset-md-3">
-    <input width="100%" style="min-width: 350px; " type="search" name="pesquisarTermo" class="inputizinpersonalite"
+    <input width="100%" " type="search" name="pesquisarTermo" class="inputizinpersonalite"
       class="form-control" placeholder="Pesquise uma receita..." aria-label="Procurar">
   </div>
 
@@ -23,10 +23,10 @@
   <br>
   <% if (typeof Data.hits !=='undefined' ) { %>
 
-
-
-    <% for(var i=0; i<10; i++) {%>
-      <div class="card" style="width:16rem; background: #302e2e; justify-content: center; ">
+   <% try { %>
+    <p hidden ><%= Data.hits[0].recipe.description %></p>
+<% for(var i=0; i<10; i++) {  %>
+      <div class="card" style="width:14rem; background: #302e2e; justify-content: center; padding-left: 25px; ">
         <img class="card-img-top" src="<%= Data.hits[i].recipe.image %>" alt="<%= Data.hits[i].recipe.label %>">
         <div class="card-body" style="background: #1C1C1C">
           <h5 class="card-title" style="background: #1C1C1C">
@@ -60,11 +60,23 @@
 
       <% }; %>
 
+      <%  } catch { %> 
+       
+       
+    
+        
+        <div class="card" style="min-width: 500px; margin-left: 448px;">
+          <div class="card-body">
+            <h5 style="background: #1C1C1C" class="card-title">Receita não encontrada</h5>
+            <p style="background: #1C1C1C" class="card-text">Não foi possivel encontrar esta receita, se quiser poderá posta-la posteriormente</p>
+          </div>
+          <img class="card-img-bottom"   src="/imagens/chefbarba.png" alt="Card image cap">
+        </div>
+
+    <% }; %>
 
 
-        <% } else if(Data.hits===[]) { %>
-          <img src="/imagens/chefbarba.png" alt="">
-          <h3>Infelizmente não temos essa receita, se quiser poderá adicionar posteriormente</h3>
-          <% } %>
 
+      <% } %>
+     
 </div>

@@ -235,6 +235,10 @@ exports.rendercalorias = async (req, res) => {
   let data = []
   
   
+
+
+/*  API EXTERNA ############################# */
+  
   
   res.render("calories", {Data: data});
 };
@@ -260,8 +264,6 @@ let data = []
     
       res.render("calories", { Data: data });
 
-
-  
   } catch (error) {
     res.render("notfound");
   }
